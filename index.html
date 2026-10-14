@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom tattoos, original artwork, and appointment bookings.">
+  <title>AWC Tattoo | Custom Tattoo Artist</title>
+  <style>
+    :root { --bg:#090909; --panel:#141414; --text:#f5f5f5; --muted:#b9b9b9; --accent:#e21d2b; --line:#303030; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1100px,92%); margin:auto; }
+    header { position:sticky; top:0; z-index:10; background:rgba(8,8,8,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(8px); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:76px; }
+    .logo { font-weight:900; letter-spacing:2px; font-size:1.35rem; }
+    .logo span { color:var(--accent); }
+    nav { display:flex; flex-wrap:wrap; gap:20px; font-size:.93rem; }
+    nav a:hover, .text-link:hover { color:var(--accent); }
+    .hero { min-height:520px; display:grid; align-items:center; background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1800&q=85') center/cover; }
+    .hero-content { padding:90px 0; max-width:700px; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; font-weight:bold; letter-spacing:3px; font-size:.8rem; }
+    h1 { font-size:clamp(2.7rem,7vw,5.5rem); line-height:.98; letter-spacing:-2px; margin:18px 0; }
+    h1 span { color:var(--accent); }
+    .hero p { color:#e0e0e0; max-width:560px; font-size:1.1rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .btn { display:inline-block; border:1px solid var(--accent); background:var(--accent); color:white; padding:13px 20px; font-weight:bold; border-radius:3px; cursor:pointer; }
+    .btn.secondary { background:transparent; border-color:#777; }
+    .btn:hover { filter:brightness(1.12); }
+    section { padding:76px 0; }
+    .section-head { margin-bottom:28px; }
+    .section-head h2 { font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.1; margin:0 0 10px; }
+    .section-head p, .muted { color:var(--muted); }
+    .about-grid, .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:center; }
+    .about-image { min-height:330px; border-radius:6px; background:url('https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=85') center/cover; }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:25px; }
+    .feature { background:var(--panel); border:1px solid var(--line); padding:18px; border-radius:5px; }
+    .feature strong { display:block; margin-bottom:6px; }
+    .feature p { color:var(--muted); margin:0; font-size:.92rem; }
+    .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .work { overflow:hidden; background:var(--panel); border:1px solid var(--line); border-radius:5px; }
+    .work img { display:block; width:100%; height:310px; object-fit:cover; transition:transform .3s; }
+    .work:hover img { transform:scale(1.04); }
+    .work p { padding:0 14px; color:var(--muted); }
+    .booking { background:#101010; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    label { display:block; margin:12px 0 6px; font-size:.92rem; }
+    input, textarea, select { width:100%; background:#090909; color:white; border:1px solid #444; border-radius:3px; padding:13px; font:inherit; }
+    textarea { min-height:120px; resize:vertical; }
+    form .btn { margin-top:16px; width:100%; }
+    .contact-details { background:var(--panel); border:1px solid var(--line); padding:25px; border-radius:5px; }
+    .contact-details p { color:var(--muted); }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; }
+    .footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    @media (max-width:700px) {
+      .nav { align-items:flex-start; padding:17px 0; flex-direction:column; }
+      nav { gap:12px; }
+      .hero { min-height:480px; }
+      .about-grid, .contact-grid { grid-template-columns:1fr; }
+      .features { grid-template-columns:1fr; }
+      .gallery { grid-template-columns:repeat(2,1fr); gap:9px; }
+      .work img { height:220px; }
+      section { padding:55px 0; }
+    }
+    @media (max-width:420px) { .gallery { grid-template-columns:1fr; } .work img { height:280px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#home">AWC <span>TATTOO</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#booking">Bookings</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-content">
+        <div class="eyebrow">Custom work · Original art</div>
+        <h1>Your idea.<br><span>My craft.</span></h1>
+        <p>Custom tattoos made with care, detail, and your story in mind. Explore my work and enquire about your next piece.</p>
+        <div class="actions">
+          <a class="btn" href="#booking">Request a booking</a>
+          <a class="btn secondary" href="#gallery">Explore the gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow">About the artist</div>
+            <h2>Art that means something.</h2>
+          </div>
+          <p class="muted">I'm Alex Well Chester, a tattoo artist focused on custom designs and thoughtful details. Tell me your idea, placement, and style, and we'll work together to shape a design that feels personal to you.</p>
+          <div class="features">
+            <div class="feature"><strong>Custom designs</strong><p>Ideas created around you.</p></div>
+            <div class="feature"><strong>Attention to detail</strong><p>Careful, considered artwork.</p></div>
+            <div class="feature"><strong>By appointment</strong><p>Enquire to discuss your piece.</p></div>
+          </div>
+        </div>
+        <div class="about-image" role="img" aria-label="Tattoo artist working on a tattoo"></div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Selected work</div>
+          <h2>Tattoo gallery</h2>
+          <p>Replace these sample photos with your own tattoo artwork for the best results.</p>
+        </div>
+        <div class="gallery">
+          <article class="work"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?auto=format&fit=crop&w=800&q=85" alt="Tattoo artwork sample"><p>Black & grey</p></article>
+          <article class="work"><img src="https://images.unsplash.com/photo-1590246814883-57c511e3a6e5?auto=format&fit=crop&w=800&q=85" alt="Tattoo artwork sample"><p>Fine detail</p></article>
+          <article class="work"><img src="https://images.unsplash.com/photo-1611843467160-25iniai8e9f?auto=format&fit=crop&w=800&q=85" alt="Tattoo artwork sample" onerror="this.src='https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=85'"><p>Custom concept</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow">Let's plan your tattoo</div>
+            <h2>Request a booking</h2>
+          </div>
+          <p class="muted">Share a few details about the tattoo you have in mind. This form opens WhatsApp with your message ready to send.</p>
+          <p class="muted">For a faster quote, include the design idea, body placement, approximate size, and any reference images you have.</p>
+        </div>
+        <form id="bookingForm">
+          <label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Enter your name">
+          <label for="contact">Email or phone</label><input id="contact" name="contact" required placeholder="How can I reach you?">
+          <label for="style">Tattoo style</label>
+          <select id="style" name="style"><option>Black & grey</option><option>Fine line</option><option>Realism</option><option>Lettering</option><option>Traditional</option><option>Other / not sure yet</option></select>
+          <label for="details">Tell me about your idea</label><textarea id="details" name="details" required placeholder="Placement, size, idea, preferred date..."></textarea>
+          <button class="btn" type="submit">Send booking request on WhatsApp</button>
+          <p class="muted" id="formNote" aria-live="polite" style="font-size:.85rem">You will review and send the message in WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="section-head"><div class="eyebrow">Get in touch</div><h2>Let's talk about your next tattoo.</h2></div>
+          <p class="muted">For bookings, collaborations, or questions, contact me through your preferred channel.</p>
+          <div class="actions">
+            <a class="btn" id="whatsappLink" href="https://wa.me/2340000000000" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn secondary" id="instagramLink" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="contact-details">
+          <strong>Booking information</strong>
+          <p>Custom tattoo enquiries are welcome. Please send reference images and mention the placement and approximate size when you contact me.</p>
+          <p><strong>Studio location:</strong> <span class="muted">Add your city or studio address here.</span></p>
+          <p><strong>Hours:</strong> <span class="muted">By appointment</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row"><span>© <span id="year"></span> AWC Tattoo. All rights reserved.</span><span>Custom tattoo art · Bookings by enquiry</span></div>
+  </footer>
+
+  <script>
+    // IMPORTANT: Replace this with your WhatsApp number including country code,
+    // but without +, spaces, or dashes. Example: 2348012345678.
+    const WHATSAPP_NUMBER = "2340000000000";
+
+    // Replace with your Instagram username (without @).
+    const INSTAGRAM_USERNAME = "yourusername";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("whatsappLink").href = `https://wa.me/${WHATSAPP_NUMBER}`;
+    document.getElementById("instagramLink").href = `https://instagram.com/${INSTAGRAM_USERNAME}`;
+
+    document.getElementById("bookingForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const style = document.getElementById("style").value;
+      const details = document.getElementById("details").value.trim();
+
+      if (!name || !contact || !details) {
+        document.getElementById("formNote").textContent = "Please complete all required fields.";
+        return;
+      }
+
+      if (WHATSAPP_NUMBER === "2340000000000") {
+        document.getElementById("formNote").textContent = "Before using bookings, replace WHATSAPP_NUMBER in script.js (or this HTML file) with your real number.";
+        return;
+      }
+
+      const message = `Tattoo booking enquiry\nName: ${name}\nContact: ${contact}\nStyle: ${style}\nIdea/details: ${details}`;
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
